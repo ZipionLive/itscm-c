@@ -27,6 +27,7 @@ int main(void)
 
     free(tab);
 
+    // TEST
     return 0;
 }
 
