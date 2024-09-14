@@ -1,3 +1,0 @@
-/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Ex1/cmake-build-debug/CMakeFiles/Lab1Ex1.dir
-/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Ex1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Ex1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
