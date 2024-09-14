@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void showResult(int note);
 void showResultSwitch(int note);
@@ -32,33 +33,27 @@ void showResult(const int note) {
 }
 
 void showResultSwitch(const int note) {
-    if (note > 100 || note < 0) {
-        printf("%d%% : Score impossible\n", note);
-        return;
-    }
-
-    switch (note / 10) {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
+    switch (note) {
+        case 0 ... 49:
             printf("%d%% : Echec\n", note);
             break;
-        case 5:
+        case 50 ... 59:
             printf("%d%% : Satisfaction\n", note);
             break;
-        case 6:
+        case 60 ... 69:
             printf("%d%% : Distinction\n", note);
             break;
-        case 7:
+        case 70 ... 79:
             printf("%d%% : Grande distinction\n", note);
             break;
-        case 8:
+        case 80 ... 89:
             printf("%d%% : Très grande distinction\n", note);
             break;
-        default:
+        case 90 ... 100:
             printf("%d%% : La plus grande distinction\n", note);
+            break;
+        case default:
+            printf("%d%% : Score impossible\n", note);
             break;
     }
 }
