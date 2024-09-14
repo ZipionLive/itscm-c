@@ -2,19 +2,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "schoolResults.h"
+#include "randomGenerator.h"
+#include "minMax.h"
 
-const int tabSize = 20;
+const int tabSize = 5;
 
-int genNumber(int max, int seed);
 int yearsSince1970();
 bool isPair(int n);
-int *genTab(int size);
 void printTab(const int *tab, int size);
+void callAllFunctions();
 
 int main(void)
 {
-    for (int i = 1; i < 100; i++) {
-        int r = genNumber(100, i);
+    callAllFunctions();
+    return 0;
+}
+
+void callAllFunctions() {
+    for (int i = 0; i < 5; i++) {
+        const int r = genNumber(100, i);
+        showResult(r);
+        showResultSwitch(r);
+    }
+
+    for (int i = 0; i < 5; i++) {
+        const int r = genNumber(100, i);
         printf("random : %d | ", r);
         printf(isPair(r) ? "%d is pair\n" : "%d isn't pair\n", r);
     }
@@ -24,15 +37,10 @@ int main(void)
 
     int *tab = genTab(tabSize);
     printTab(tab, tabSize);
+    showMin(tab, tabSize);
+    showMax(tab, tabSize);
 
     free(tab);
-
-    return 0;
-}
-
-int genNumber(const int max, const int seed) {
-    srand(time(NULL) + seed);
-    return rand() % (max + 1);
 }
 
 int yearsSince1970() {
@@ -43,16 +51,6 @@ bool isPair(const int n) {
     return n % 2 == 0;
 }
 
-int *genTab(const int size) {
-    int *tab = malloc(size * sizeof(int));
-
-    for (int i = 0; i < size; i++) {
-        tab[i] = genNumber(100, i);
-    }
-
-    return tab;
-}
-
 void printTab(const int *tab, const int size) {
     if (tab == NULL) {
         printf("Error: tab is NULL\n");
@@ -60,7 +58,8 @@ void printTab(const int *tab, const int size) {
     }
 
     for (int i = 0; i < size; i++) {
-        printf("[%d] ", tab[i]);
+        printf("[%d]", tab[i]);
     }
+
     printf("\n");
 }
