@@ -1,0 +1,9 @@
+# ninja log v6
+0	21	1726332257907282334	CMakeFiles/Lab1Complete.dir/schoolResults.c.o	668486248ba55eb4
+0	22	1726332257907282334	CMakeFiles/Lab1Complete.dir/minMax.c.o	961f726e46ca1135
+0	22	1726332257907282334	CMakeFiles/Lab1Complete.dir/randomGenerator.c.o	395139994df86b8e
+0	31	1726332257907282334	CMakeFiles/Lab1Complete.dir/main.c.o	4d1085cef0ed2062
+32	50	1726332257939283261	Lab1Complete	1589653794f37e5d
+1	22	1726332386446005000	CMakeFiles/Lab1Complete.dir/minMax.c.o	961f726e46ca1135
+1	26	1726332386445004971	CMakeFiles/Lab1Complete.dir/main.c.o	4d1085cef0ed2062
+26	45	1726332386470005695	Lab1Complete	1589653794f37e5d

@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "Lab1",
+					"name" : "Lab1Complete",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "Lab1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Lab1-Debug-fc5e80ec544659517c12.json",
-					"name" : "Lab1",
+					"id" : "Lab1Complete::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Lab1Complete-Debug-3d5ffc2d9aa3ead371eb.json",
+					"name" : "Lab1Complete",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1/cmake-build-debug",
-		"source" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1"
+		"build" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete/cmake-build-debug",
+		"source" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete"
 	},
 	"version" : 
 	{
