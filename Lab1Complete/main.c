@@ -37,8 +37,10 @@ void callAllFunctions() {
 
     int *tab = genTab(tabSize);
     printTab(tab, tabSize);
-    showMin(tab, tabSize);
-    showMax(tab, tabSize);
+    int min = getMin(tab, tabSize);
+    printf("Minimum value is: %d\n", min);
+    int max = getMax(tab, tabSize);
+    printf("Maximum value is: %d\n", max);
 
     free(tab);
 }
