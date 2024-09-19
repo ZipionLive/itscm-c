@@ -2,10 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
+#include "copyTab.h"
 #include "schoolResults.h"
 #include "randomGenerator.h"
 #include "minMax.h"
 #include "guess.h"
+#include "order.h"
 
 const int tabSize = 10;
 
@@ -13,6 +16,7 @@ int yearsSince1970();
 bool isPair(int n);
 void printTab(const int *tab, int size);
 void callAllFunctions();
+void getUserNumbersMinMax(int size);
 
 int main(void)
 {
@@ -45,8 +49,38 @@ void callAllFunctions() {
 
     free(tab);
 
-    guessNumber(1);
-    guessLetter(1);
+    // guessNumber(1);
+    // guessLetter(1);
+    // getUserNumbersMinMax(3);
+
+    int *tab1 = genTabMax(tabSize, 100);
+    int *tab2 = copyTab(tab1, tabSize);
+    int *tab3 = copyTab(tab1, tabSize);
+    int *tab4 = copyTab(tab1, tabSize);
+
+    printf("Unsorted tab:\n");
+    printTab(tab1, tabSize);
+
+    printf("Sorted tab ascending:");
+    orderAscending(tab1, tabSize);
+    printTab(tab1, tabSize);
+
+    printf("Sorted tab ascending bubble:");
+    orderAscendingBubble(tab2, tabSize);
+    printTab(tab2, tabSize);
+
+    printf("Sorted tab descending:");
+    orderDescending(tab3, tabSize);
+    printTab(tab3, tabSize);
+
+    printf("Sorted tab descending bubble:");
+    orderDescendingBubble(tab4, tabSize);
+    printTab(tab4, tabSize);
+
+    free(tab1);
+    free(tab2);
+    free(tab3);
+    free(tab4);
 }
 
 int yearsSince1970() {
@@ -68,4 +102,17 @@ void printTab(const int *tab, const int size) {
     }
 
     printf("\n");
+}
+
+void getUserNumbersMinMax(const int size) {
+    int *userNumbers = malloc(sizeof(int) * size);
+
+    for (int i = 0; i < size; i++) {
+        printf("Enter number N°%d out of %d:\n", i + 1, size);
+        scanf("%d", &userNumbers[i]);
+    }
+
+    printf("Minimum value is %d and maximum value is %d.\n", getMin(userNumbers, size), getMax(userNumbers, size));
+
+    free(userNumbers);
 }
