@@ -1,3 +1,0 @@
-/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/DynamicArrays/cmake-build-debug/CMakeFiles/DynamicArrays.dir
-/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/DynamicArrays/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/DynamicArrays/cmake-build-debug/CMakeFiles/rebuild_cache.dir
