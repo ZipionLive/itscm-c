@@ -51,9 +51,9 @@ void callAllFunctions() {
 
     free(tab);
 
-    // guessNumber(1);
-    // guessLetter(1);
-    // getUserNumbersMinMax(3);
+    guessNumber(1);
+    guessLetter(1);
+    getUserNumbersMinMax(3);
 
     int *tab1 = genTabMax(tabSize, 100);
     int *tab2 = copyTab(tab1, tabSize);
@@ -95,6 +95,36 @@ void callAllFunctions() {
     printTab(tabVerbose, tabSize);
 
     free(tabVerbose);
+
+    int *all = genTabMax(tabSize, 1000);
+    printf("All values:\n");
+    printTab(all, tabSize);
+
+    int *oddSize = malloc(sizeof(int));
+    int *odds = copyTabOdd(all, tabSize, oddSize);
+
+    if (oddSize[0] == 0) {
+        printf("No odd value found.\n");
+    } else {
+        printf("%d odd values found:\n", oddSize[0]);
+        printTab(odds, oddSize[0]);
+    }
+
+    int *evenSize = malloc(sizeof(int));
+    int *evens = copyTabEven(all, tabSize, evenSize);
+
+    if (evenSize[0] == 0) {
+        printf("No even value found.\n");
+    } else {
+        printf("%d even values found:\n", evenSize[0]);
+        printTab(evens, evenSize[0]);
+    }
+
+    free(all);
+    free(oddSize);
+    free(odds);
+    free(evenSize);
+    free(evens);
 }
 
 int yearsSince1970() {
