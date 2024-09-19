@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: Lab1Complete
+# Project: Lab1WithExtra
 # Configurations: Debug
 # =============================================================================
 # =============================================================================
@@ -14,7 +14,7 @@
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__Lab1Complete_unscanned_Debug
+rule C_COMPILER__Lab1WithExtra_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}/usr/bin/cc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -24,7 +24,7 @@ rule C_COMPILER__Lab1Complete_unscanned_Debug
 #############################################
 # Rule for linking C executable.
 
-rule C_EXECUTABLE_LINKER__Lab1Complete_Debug
+rule C_EXECUTABLE_LINKER__Lab1WithExtra_Debug
   command = $PRE_LINK && /usr/bin/cc $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /app/extra/clion/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete -B/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete/cmake-build-debug
+  command = /app/extra/clion/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1WithExtra -B/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1WithExtra/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

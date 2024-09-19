@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete/cmake-build-debug"
+			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1WithExtra/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -415,7 +415,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1WithExtra/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -475,7 +475,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete"
+			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1WithExtra"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -715,7 +715,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Lab1Complete"
+			"value" : "Lab1WithExtra"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1014,7 +1014,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "Lab1Complete_BINARY_DIR",
+			"name" : "Lab1WithExtra_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1023,10 +1023,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete/cmake-build-debug"
+			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1WithExtra/cmake-build-debug"
 		},
 		{
-			"name" : "Lab1Complete_IS_TOP_LEVEL",
+			"name" : "Lab1WithExtra_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1038,7 +1038,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "Lab1Complete_SOURCE_DIR",
+			"name" : "Lab1WithExtra_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1047,7 +1047,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete"
+			"value" : "/home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1WithExtra"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

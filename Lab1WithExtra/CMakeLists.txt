@@ -1,21 +1,20 @@
 cmake_minimum_required(VERSION 3.29)
-project(Lab1Complete C)
+project(Lab1WithExtra C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Lab1Complete main.c
+add_executable(Lab1WithExtra main.c
+        copyTab.c
+        copyTab.h
+        guess.c
+        guess.h
         minMax.c
         minMax.h
+        order.c
+        order.h
         randomGenerator.c
         randomGenerator.h
         schoolResults.c
         schoolResults.h
-        guess.c
-        guess.h
-        order.c
-        order.h
         tabSwitch.c
-        tabSwitch.h
-        copyTab.c
-        copyTab.h
-)
+        tabSwitch.h)
