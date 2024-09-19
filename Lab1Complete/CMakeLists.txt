@@ -10,4 +10,12 @@ add_executable(Lab1Complete main.c
         randomGenerator.h
         schoolResults.c
         schoolResults.h
+        guess.c
+        guess.h
+        order.c
+        order.h
+        tabSwitch.c
+        tabSwitch.h
+        copyTab.c
+        copyTab.h
 )

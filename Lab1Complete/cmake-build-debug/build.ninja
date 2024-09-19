@@ -73,6 +73,30 @@ build CMakeFiles/Lab1Complete.dir/schoolResults.c.o: C_COMPILER__Lab1Complete_un
   OBJECT_DIR = CMakeFiles/Lab1Complete.dir
   OBJECT_FILE_DIR = CMakeFiles/Lab1Complete.dir
 
+build CMakeFiles/Lab1Complete.dir/guess.c.o: C_COMPILER__Lab1Complete_unscanned_Debug /home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete/guess.c || cmake_object_order_depends_target_Lab1Complete
+  DEP_FILE = CMakeFiles/Lab1Complete.dir/guess.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Lab1Complete.dir
+  OBJECT_FILE_DIR = CMakeFiles/Lab1Complete.dir
+
+build CMakeFiles/Lab1Complete.dir/order.c.o: C_COMPILER__Lab1Complete_unscanned_Debug /home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete/order.c || cmake_object_order_depends_target_Lab1Complete
+  DEP_FILE = CMakeFiles/Lab1Complete.dir/order.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Lab1Complete.dir
+  OBJECT_FILE_DIR = CMakeFiles/Lab1Complete.dir
+
+build CMakeFiles/Lab1Complete.dir/tabSwitch.c.o: C_COMPILER__Lab1Complete_unscanned_Debug /home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete/tabSwitch.c || cmake_object_order_depends_target_Lab1Complete
+  DEP_FILE = CMakeFiles/Lab1Complete.dir/tabSwitch.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Lab1Complete.dir
+  OBJECT_FILE_DIR = CMakeFiles/Lab1Complete.dir
+
+build CMakeFiles/Lab1Complete.dir/copyTab.c.o: C_COMPILER__Lab1Complete_unscanned_Debug /home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab1Complete/copyTab.c || cmake_object_order_depends_target_Lab1Complete
+  DEP_FILE = CMakeFiles/Lab1Complete.dir/copyTab.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Lab1Complete.dir
+  OBJECT_FILE_DIR = CMakeFiles/Lab1Complete.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lab1Complete
@@ -81,7 +105,7 @@ build CMakeFiles/Lab1Complete.dir/schoolResults.c.o: C_COMPILER__Lab1Complete_un
 #############################################
 # Link the executable Lab1Complete
 
-build Lab1Complete: C_EXECUTABLE_LINKER__Lab1Complete_Debug CMakeFiles/Lab1Complete.dir/main.c.o CMakeFiles/Lab1Complete.dir/minMax.c.o CMakeFiles/Lab1Complete.dir/randomGenerator.c.o CMakeFiles/Lab1Complete.dir/schoolResults.c.o
+build Lab1Complete: C_EXECUTABLE_LINKER__Lab1Complete_Debug CMakeFiles/Lab1Complete.dir/main.c.o CMakeFiles/Lab1Complete.dir/minMax.c.o CMakeFiles/Lab1Complete.dir/randomGenerator.c.o CMakeFiles/Lab1Complete.dir/schoolResults.c.o CMakeFiles/Lab1Complete.dir/guess.c.o CMakeFiles/Lab1Complete.dir/order.c.o CMakeFiles/Lab1Complete.dir/tabSwitch.c.o CMakeFiles/Lab1Complete.dir/copyTab.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Lab1Complete.dir
   POST_BUILD = :

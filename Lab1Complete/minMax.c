@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-int getMin(int *tab, int size) {
+int getMin(int *tab, const int size) {
     int min = INT_MAX;
 
     for (int i = 0; i < size; i++) {
@@ -16,7 +16,7 @@ int getMin(int *tab, int size) {
     return min;
 }
 
-int getMax(int *tab, int size) {
+int getMax(int *tab, const int size) {
     int max = INT_MIN;
 
     for (int i = 0; i < size; i++) {
