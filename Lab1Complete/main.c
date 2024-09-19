@@ -5,8 +5,9 @@
 #include "schoolResults.h"
 #include "randomGenerator.h"
 #include "minMax.h"
+#include "guess.h"
 
-const int tabSize = 5;
+const int tabSize = 10;
 
 int yearsSince1970();
 bool isPair(int n);
@@ -21,13 +22,13 @@ int main(void)
 
 void callAllFunctions() {
     for (int i = 0; i < 5; i++) {
-        const int r = genNumber(100, i);
+        const int r = genNumberMax(100, i);
         showResult(r);
         showResultSwitch(r);
     }
 
     for (int i = 0; i < 5; i++) {
-        const int r = genNumber(100, i);
+        const int r = genNumberMax(100, i);
         printf("random : %d | ", r);
         printf(isPair(r) ? "%d is pair\n" : "%d isn't pair\n", r);
     }
@@ -35,7 +36,7 @@ void callAllFunctions() {
     // proof that time(NULL) returns seconds !
     printf("years since 1970 : %d\n", yearsSince1970());
 
-    int *tab = genTab(tabSize);
+    int *tab = genTabMinMax(tabSize, 100, 200);
     printTab(tab, tabSize);
     int min = getMin(tab, tabSize);
     printf("Minimum value is: %d\n", min);
@@ -43,6 +44,9 @@ void callAllFunctions() {
     printf("Maximum value is: %d\n", max);
 
     free(tab);
+
+    guessNumber(1);
+    guessLetter(1);
 }
 
 int yearsSince1970() {

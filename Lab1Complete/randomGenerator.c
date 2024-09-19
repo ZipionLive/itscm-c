@@ -7,16 +7,32 @@
 #include <time.h>
 
 
-int genNumber(const int max, const int seed) {
+int genNumberMax(const int max, const int seed) {
     srand(time(NULL) + seed);
     return rand() % (max + 1);
 }
 
-int *genTab(const int size) {
+int genNumberMinMax(const int min, const int max, const int seed) {
+    srand(time(NULL) + seed);
+    int randMax = max - min;
+    return (rand() % (randMax + 1)) + min;
+}
+
+int *genTabMax(const int size, const int max) {
     int *tab = malloc(size * sizeof(int));
 
     for (int i = 0; i < size; i++) {
-        tab[i] = genNumber(100, i);
+        tab[i] = genNumberMax(max, i);
+    }
+
+    return tab;
+}
+
+int *genTabMinMax(const int size, const int min, const int max) {
+    int *tab = malloc(size * sizeof(int));
+
+    for (int i = 0; i < size; i++) {
+        tab[i] = genNumberMinMax(min, max, i);
     }
 
     return tab;
