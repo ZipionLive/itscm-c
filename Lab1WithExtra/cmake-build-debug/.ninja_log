@@ -1,0 +1,10 @@
+# ninja log v6
+0	35	1726759129662109334	CMakeFiles/Lab1WithExtra.dir/main.c.o	10224aa93eca2254
+2	22	1726759177618440015	CMakeFiles/Lab1WithExtra.dir/tabSwitch.c.o	50b30eaede9a9156
+1	30	1726759177617439988	CMakeFiles/Lab1WithExtra.dir/guess.c.o	142c5ae4aeda2f7
+1	31	1726759177617439988	CMakeFiles/Lab1WithExtra.dir/copyTab.c.o	c00b1bd3d661641c
+1	31	1726759177617439988	CMakeFiles/Lab1WithExtra.dir/minMax.c.o	b5f5a29a1600480b
+2	34	1726759177618440015	CMakeFiles/Lab1WithExtra.dir/order.c.o	bcba74a0396f1d69
+2	35	1726759177618440015	CMakeFiles/Lab1WithExtra.dir/randomGenerator.c.o	6f170ed7cf15ffea
+2	35	1726759177618440015	CMakeFiles/Lab1WithExtra.dir/schoolResults.c.o	d4737466ac7ad916
+35	57	1726759177651440930	Lab1WithExtra	432a4e43aefdc85a
