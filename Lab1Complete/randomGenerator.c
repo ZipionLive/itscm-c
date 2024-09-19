@@ -3,6 +3,8 @@
 //
 
 #include "randomGenerator.h"
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -33,6 +35,28 @@ int *genTabMinMax(const int size, const int min, const int max) {
 
     for (int i = 0; i < size; i++) {
         tab[i] = genNumberMinMax(min, max, i);
+    }
+
+    return tab;
+}
+
+int *genTabMaxVerbose(const int size, const int max) {
+    int *tab = genTabMax(size, max);
+
+    printf("Array generated:\n");
+    for (int i = 0; i < size; i++) {
+        printf("Index %d: value = %d | address = %p\n", i, tab[i], &tab[i]);
+    }
+
+    return tab;
+}
+
+int *genTabMinMaxVerbose(const int size, const int min, const int max) {
+    int *tab = genTabMinMax(size, min, max);
+
+    printf("Array generated:\n");
+    for (int i = 0; i < size; i++) {
+        printf("Index %d: value = %d | address = %p\n", i, tab[i], &tab[i]);
     }
 
     return tab;

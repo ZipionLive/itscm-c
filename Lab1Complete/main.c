@@ -90,6 +90,11 @@ void callAllFunctions() {
     getNotesAverage(notes, tabSize);
 
     free(notes);
+
+    int *tabVerbose = genTabMinMaxVerbose(tabSize, 100, 200);
+    printTab(tabVerbose, tabSize);
+
+    free(tabVerbose);
 }
 
 int yearsSince1970() {
