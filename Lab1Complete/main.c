@@ -16,7 +16,9 @@ int yearsSince1970();
 bool isPair(int n);
 void printTab(const int *tab, int size);
 void callAllFunctions();
+int *getUserNumbers(int size);
 void getUserNumbersMinMax(int size);
+void getNotesAverage(int *notes, int size);
 
 int main(void)
 {
@@ -81,6 +83,13 @@ void callAllFunctions() {
     free(tab2);
     free(tab3);
     free(tab4);
+
+    int *notes = genTabMax(tabSize, 20);
+    printf("Notes:\n");
+    printTab(notes, tabSize);
+    getNotesAverage(notes, tabSize);
+
+    free(notes);
 }
 
 int yearsSince1970() {
@@ -104,8 +113,19 @@ void printTab(const int *tab, const int size) {
     printf("\n");
 }
 
+int *getUserNumbers(const int size) {
+    int *tab = malloc(size * sizeof(int));
+
+    for (int i = 0; i < size; i++) {
+        printf("Enter number N°%d out of %d:\n", i + 1, size);
+        scanf("%d", &tab[i]);
+    }
+
+    return tab;
+}
+
 void getUserNumbersMinMax(const int size) {
-    int *userNumbers = malloc(sizeof(int) * size);
+    int *userNumbers = getUserNumbers(size);
 
     for (int i = 0; i < size; i++) {
         printf("Enter number N°%d out of %d:\n", i + 1, size);
@@ -113,6 +133,28 @@ void getUserNumbersMinMax(const int size) {
     }
 
     printf("Minimum value is %d and maximum value is %d.\n", getMin(userNumbers, size), getMax(userNumbers, size));
-
     free(userNumbers);
+}
+
+void getNotesAverage(int *notes, const int size) {
+    int sum = 0;
+
+    for (int i = 0; i < size; i++) {
+        sum += notes[i];
+    }
+
+    double avg = (double)sum / size;
+
+    printf("Moyenne de %.2f/20 : ", avg);
+    if (avg < 10) {
+        printf("Refusé\n");
+    } else if (avg < 12) {
+        printf("Passable\n");
+    } else if (avg < 14) {
+        printf("Assez bien\n");
+    } else if (avg < 16) {
+        printf("Bien\n");
+    } else {
+        printf("Très bien\n");
+    }
 }
