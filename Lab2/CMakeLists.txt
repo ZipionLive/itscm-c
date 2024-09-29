@@ -5,4 +5,8 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(Lab2 main.c
         randomGenerator.c
-        randomGenerator.h)
+        randomGenerator.h
+        arrayTools.c
+        arrayTools.h
+        printTools.c
+        printTools.h)

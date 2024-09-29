@@ -162,11 +162,6 @@ int *getUserNumbers(const int size) {
 void getUserNumbersMinMax(const int size) {
     int *userNumbers = getUserNumbers(size);
 
-    for (int i = 0; i < size; i++) {
-        printf("Enter number N°%d out of %d:\n", i + 1, size);
-        scanf("%d", &userNumbers[i]);
-    }
-
     printf("Minimum value is %d and maximum value is %d.\n", getMin(userNumbers, size), getMax(userNumbers, size));
     free(userNumbers);
 }

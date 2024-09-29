@@ -2,116 +2,70 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include "arrayTools.h"
+#include "printTools.h"
 #include "randomGenerator.h"
 
-int *diffTab(int *tab1, int size1, int *tab2, int size2, int *sizeResult);
-void printTab(const int *tab, int size);
-void printTab2d(const int **tab, int lines, int columns);
-void freeTab2d(int **tab2d, int lines);
-int *flattenTab(int **tab, int lines, int columns, int *sizeResult);
-
 int main(void) {
-    int s1 = 8, s2 = 10, s3 = 0, seed = time(NULL);
-    int *tab1 = genTabMax(10, 100, seed % 10);
-    int *tab2 = genTabMax(8, 100, seed % 100);
-    int *tab3 = diffTab(tab1, 10, tab2, 8, &s3);
+    const int s1 = 8;
+    const int s2 = 10;
+    int s3 = 0;
+    const int seed = time(NULL);
+
+    int *tab1 = genTabMax(s1, 100, seed % 10);
+    int *tab2 = genTabMax(s2, 100, seed % 100);
+    int *tab3 = diffTab(tab1, s1, tab2, s2, &s3);
+
     printTab(tab1, s1);
     printTab(tab2, s2);
     printTab(tab3, s3);
+
     free(tab1);
     free(tab2);
     free(tab3);
-    int **tab2d = genTab2dMax(10, 10, 1000, seed % 1000);
-    printTab2d(tab2d, 10, 10);
-    freeTab2d(tab2d, 10);
-    int **tab2d2 = genTab2dMinMax(10, 10, 1000, 2000, seed % 1000);
+
+    int **tab2d = genTab2dMax(s1, s2, 1000, seed);
+    printTab2d(tab2d, s1, s2);
+    freeTab2d(tab2d, s1);
+
+    int **tab2d2 = genTab2dMinMax(s1, s2, 1000, 2000, seed);
     printTab2d(tab2d2, 5, 5);
+
     int flatSize = 0;
     int *flat = flattenTab(tab2d2, 5, 5, &flatSize);
     printTab(flat, flatSize);
-    freeTab2d(tab2d2, 10);
+
+    freeTab2d(tab2d2, s1);
     free(flat);
+
+    int *tab4 = genTabMax(s1, 100, seed + 1);
+    int *tab5 = genTabMax(s1, 100, seed + 2);
+    int **merged1 = mergeTab2d(tab4, tab5, s1);
+    printf("tab4 :\n");
+    printTab(tab4, s1);
+    printf("tab5 :\n");
+    printTab(tab5, s1);
+    printf("merged1 :\n");
+    printTab2d(merged1, 2, s1);
+
+    free(tab4);
+    free(tab5);
+    freeTab2d(merged1, 2);
+
+    int *tab6 = genTabMax(s1, 100, seed + 3);
+    int *tab7 = genTabMax(s2, 100, seed + 4);
+    int mergedSize = 0;
+    int **merged2 = mergeTab2dAlt(tab6, s1, tab7, s2, &mergedSize);
+    printf("tab6 :\n");
+    printTab(tab6, s1);
+    printf("tab7 :\n");
+    printTab(tab7, s2);
+    printf("merged2 :\n");
+    printTab2d(merged2, 2, mergedSize);
+
+    free(tab6);
+    free(tab7);
+    freeTab2d(merged2, 2);
+
     return 0;
-}
-
-void printTab(const int *tab, const int size) {
-    if (tab == NULL) {
-        printf("Error: tab is NULL\n");
-        return;
-    }
-
-    for (int i = 0; i < size; i++) {
-        printf("[%d]", tab[i]);
-    }
-
-    printf("\n");
-}
-
-void printTab2d(const int **tab, const int lines, const int columns) {
-    for (int i = 0; i < lines; i++) {
-        for (int j = 0; j < columns; j++) {
-            printf("[%d]", tab[i][j]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
-
-int *diffTab(int *tab1, int size1, int *tab2, int size2, int *sizeResult) {
-    int j = 0;
-    int *result = NULL;
-
-    if (size1 > size2) {
-        result = malloc(size2 * sizeof(int));
-        for (int i = 0; i < size2; i++) {
-            int sub = tab1[i] - tab2[i];
-            if (sub > 0) {
-                result[j] = sub;
-                j++;
-            }
-        }
-        for (int i = size2; i < size1; i++) {
-            result[j] = tab1[i];
-            j++;
-        }
-    } else {
-        result = malloc(size1 * sizeof(int));
-        for (int i = 0; i < size1; i++) {
-            int sub = tab1[i] - tab2[i];
-            if (sub > 0) {
-                result[j] = sub;
-                j++;
-            }
-        }
-        for (int i = size1; i < size2; i++) {
-            result[j] = tab2[i];
-            j++;
-        }
-    }
-    realloc(result, j * sizeof(int));
-    *sizeResult = j;
-
-    return result;
-}
-
-int *flattenTab(int **tab2d, const int lines, const int columns, int *sizeResult) {
-    int *result = malloc(lines * columns * sizeof(int));
-    int idx = 0;
-
-    for (int i = 0; i < lines; i++) {
-        for (int j = 0; j < columns; j++) {
-            result[idx] = tab2d[i][j];
-            idx++;
-        }
-    }
-
-    *sizeResult = idx;
-    return result;
-}
-
-void freeTab2d(int **tab2d, const int lines) {
-    for (int i = 0; i < lines; i++) {
-        free(tab2d[i]);
-    }
-    free(tab2d);
 }
