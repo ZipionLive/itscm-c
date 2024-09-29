@@ -67,6 +67,12 @@ build CMakeFiles/Lab2.dir/arrayTools.c.o: C_COMPILER__Lab2_unscanned_Debug /home
   OBJECT_DIR = CMakeFiles/Lab2.dir
   OBJECT_FILE_DIR = CMakeFiles/Lab2.dir
 
+build CMakeFiles/Lab2.dir/printTools.c.o: C_COMPILER__Lab2_unscanned_Debug /home/zipionlive/Workspaces/Git/ITSCM/itscm-c/Lab2/printTools.c || cmake_object_order_depends_target_Lab2
+  DEP_FILE = CMakeFiles/Lab2.dir/printTools.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/Lab2.dir
+  OBJECT_FILE_DIR = CMakeFiles/Lab2.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lab2
@@ -75,7 +81,7 @@ build CMakeFiles/Lab2.dir/arrayTools.c.o: C_COMPILER__Lab2_unscanned_Debug /home
 #############################################
 # Link the executable Lab2
 
-build Lab2: C_EXECUTABLE_LINKER__Lab2_Debug CMakeFiles/Lab2.dir/main.c.o CMakeFiles/Lab2.dir/randomGenerator.c.o CMakeFiles/Lab2.dir/arrayTools.c.o
+build Lab2: C_EXECUTABLE_LINKER__Lab2_Debug CMakeFiles/Lab2.dir/main.c.o CMakeFiles/Lab2.dir/randomGenerator.c.o CMakeFiles/Lab2.dir/arrayTools.c.o CMakeFiles/Lab2.dir/printTools.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Lab2.dir
   POST_BUILD = :
