@@ -160,7 +160,7 @@ bool contains2to5(const char *source, const char *compared) {
     return contains;
 }
 
-char *substring(const char *str, int startIndex, int endIndex) {
+char *substring(const char *str, const int startIndex, const int endIndex) {
     const int length = getLength(str);
 
     if (length < endIndex) {
