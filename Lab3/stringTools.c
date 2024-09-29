@@ -48,7 +48,6 @@ int getLengthToCarriageReturn(const char *str) {
 
 int getAsciiCode() {
     printf("Type a character : ");
-    fflush(stdout);
     getchar();
     const char c = getchar();
     printf("\n");
