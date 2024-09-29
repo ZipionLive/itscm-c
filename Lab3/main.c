@@ -11,7 +11,7 @@ int main(void)
     return 0;
 }
 
-void run() {
+void run() { // NOLINT(*-no-recursion)
     printf("\n\n");
     printf("[1] : Get ASCII code\n");
     printf("[2] : Reverse string\n");
