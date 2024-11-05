@@ -19,6 +19,7 @@ void swapNum(int *p1, int *p2);
 void genAndPrintTab2DByAddress();
 void getAndPrint3Tabs();
 int **genAndReturn3Tabs(int size1, int size2, int size3, int seed);
+void showPointerExpressions();
 void addAndPrintPointers();
 int *addPointers(int *p1, int *p2);
 
@@ -30,6 +31,7 @@ int main(void)
     swapAndPrintNumbers();
     genAndPrintTab2DByAddress();
     getAndPrint3Tabs();
+    showPointerExpressions();
     addAndPrintPointers();
     return 0;
 }
@@ -183,6 +185,32 @@ int **genAndReturn3Tabs(const int size1, const int size2, const int size3, const
         tab[2][i] = genRandomInt(RAND_MAX, seed + i + 3000);
     }
     return tab;
+}
+
+// Labo 4.2 ex 3
+void showPointerExpressions()
+{
+    printf("\nLab 4.2 ex 3\n");
+    int tab[] = { 16, 24, 56, 12, 21, 45, 19, 80, 93 };
+    int *p;
+    p = tab;
+    printf("tab = %p\n&tab = %p\np = %p\n&p = %p\n\n", tab, &tab, p, &p);
+    for (int i = 0; i < 9; i++)
+    {
+        printf("tab[%d] = %d @ %p\n", i, tab[i], &tab[i]);
+    }
+    printf("\n");
+
+    printf("a) *p + 5 = %d\n", *p + 5); // 21 => value of tab[0] + 5
+    printf("b) *(p + 5) = %d\n", *p + 5); // 45 => value of tab[0 + 5]
+    printf("c) &p + 2 = %p\n", &p + 2); // address of p + (2 * 8) (size of a memory address = 8 bytes)
+    printf("d) &tab[4] - 2 = %p\n", &tab[4] - 2); // address of tab[2]
+    printf("e) tab + 4 = %p\n", tab + 4); // address of tab[4]
+    printf("f) &tab[7] - p = %ld\n", &tab[7] - p); // 7
+    printf("g) p + (*p - 10) = %p\n", p + (*p - 10)); // address of tab[6]
+    printf("h) *(p + *(p + 8) - 90) = %d\n", *(p + *(p + 8) - 90)); // 12 => *(p + 8) = tab[8] = 93 => *(p + 93 - 90) = tab[3]
+    printf("i) *(++tab + 1) = compilation error : ++tab not supported\n");
+    printf("j) *(tab + 5) * (*(p + 3)) = %d\n", *(tab + 5) * (*(p + 3))); // 540 => tab[5] * tab[3] = 45 * 12
 }
 
 // Labo 4.2 ex 4
