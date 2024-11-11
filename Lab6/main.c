@@ -3,7 +3,6 @@
 
 #include "credentials.h"
 #include "fileHandling.h"
-#include "stringTools.h"
 #include "userInput.h"
 
 #define N_USER 4
