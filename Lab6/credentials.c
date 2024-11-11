@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
-#include <stdbool.h>
 
 #define FORMAT_PARTS 5
 
