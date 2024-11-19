@@ -13,6 +13,8 @@ typedef struct person {
 
 PERSON newPerson(char *name, int age, float height);
 PERSON promptPerson();
+PERSON *promptPeople(int count);
 void printPerson(PERSON person);
+void printPeople(const PERSON *people, int count);
 
 #endif //PERSON_H

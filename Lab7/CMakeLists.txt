@@ -7,4 +7,8 @@ add_executable(Lab7 main.c
         person.c
         person.h
         userInput.c
-        stringTools.c)
+        stringTools.c
+        rectangle.c
+        rectangle.h
+        date.c
+        date.h)

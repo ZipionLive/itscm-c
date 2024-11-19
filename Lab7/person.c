@@ -7,6 +7,7 @@
 #include "stringTools.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 PERSON newPerson(char *name, const int age, const float height) {
     PERSON p;
@@ -34,6 +35,22 @@ PERSON promptPerson() {
     return newPerson(name, age, height);
 }
 
-void printPerson(PERSON p) {
-    printf("Name : %s | age : %d years old | height : %.2fm\n", p.name, p.age, p.height);
+PERSON *promptPeople(const int count) {
+    PERSON *people = malloc(sizeof(PERSON) * count);
+    for (int i = 0; i < count; i++) {
+        printf("\nAdding person %d out of %d\n", i + 1, count);
+        people[i] = promptPerson();
+    }
+    return people;
+}
+
+void printPerson(const PERSON person) {
+    printf("Name : %s\nage : %d years old\nheight : %.2fm\n", person.name, person.age, person.height);
+}
+
+void printPeople(const PERSON *people, const int count) {
+    for (int i = 0; i < count; i++) {
+        printf("\nPerson %d out of %d:\n", i + 1, count);
+        printPerson(people[i]);
+    }
 }
