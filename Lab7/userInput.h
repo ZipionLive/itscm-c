@@ -5,6 +5,6 @@
 #ifndef USERINPUT_H
 #define USERINPUT_H
 
-char *getUserInput(const char *prompt);
+char *getUserInput(const char *prompt, int maxLength);
 
 #endif //USERINPUT_H

@@ -18,17 +18,17 @@ PERSON newPerson(char *name, const int age, const float height) {
 }
 
 PERSON promptPerson() {
-    char *name = getUserInput("Enter the person\'s name : ");
+    char *name = getUserInput("Enter the person\'s name : ", 50);
 
     int age = -1;
     do {
-        const char *ageStr = getUserInput("Enter the person\'s age : ");
+        const char *ageStr = getUserInput("Enter the person\'s age : ", 10);
         age = stringToInt(ageStr);
     } while (age == -1);
 
     float height = -1;
     do {
-        const char *heightStr = getUserInput("Enter the person\'s height : ");
+        const char *heightStr = getUserInput("Enter the person\'s height : ", 10);
         height = stringToFloat(heightStr);
     } while (height == -1);
 
@@ -37,10 +37,12 @@ PERSON promptPerson() {
 
 PERSON *promptPeople(const int count) {
     PERSON *people = malloc(sizeof(PERSON) * count);
+
     for (int i = 0; i < count; i++) {
         printf("\nAdding person %d out of %d\n", i + 1, count);
         people[i] = promptPerson();
     }
+
     return people;
 }
 
@@ -50,7 +52,7 @@ void printPerson(const PERSON person) {
 
 void printPeople(const PERSON *people, const int count) {
     for (int i = 0; i < count; i++) {
-        printf("\nPerson %d out of %d:\n", i + 1, count);
+        printf("\nPerson %d out of %d :\n", i + 1, count);
         printPerson(people[i]);
     }
 }

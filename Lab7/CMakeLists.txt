@@ -11,4 +11,8 @@ add_executable(Lab7 main.c
         rectangle.c
         rectangle.h
         date.c
-        date.h)
+        date.h
+        event.c
+        event.h
+        mathTools.c
+        mathTools.h)

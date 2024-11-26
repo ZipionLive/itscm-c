@@ -15,13 +15,13 @@ RECTANGLE promptRectangle() {
 
     rect.width = -1;
     do {
-        const char *widthStr = getUserInput("Please enter rectangle width: ");
+        const char *widthStr = getUserInput("Please enter rectangle width: ", 10);
         rect.width = stringToInt(widthStr);
     } while (rect.width == -1);
 
     rect.height = -1;
     do {
-        const char *heightStr = getUserInput("Please enter rectangle height: ");
+        const char *heightStr = getUserInput("Please enter rectangle height: ", 10);
         rect.height = stringToInt(heightStr);
     } while (rect.height == -1);
 

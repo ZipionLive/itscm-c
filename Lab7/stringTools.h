@@ -11,5 +11,6 @@ char **splitString(const char *str, char delimiter, int *sizeOutput);
 int stringToInt(const char *str);
 float stringToFloat(const char *str);
 int isEqualString(const char *str1, const char *str2);
+char *padNumber(int value, int length);
 
 #endif //STRINGTOOLS_H

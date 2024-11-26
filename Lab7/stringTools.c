@@ -3,6 +3,7 @@
 //
 
 #include "stringTools.h"
+#include "mathTools.h"
 
 #include <errno.h>
 #include <limits.h>
@@ -12,7 +13,7 @@
 
 int getLength(const char *str) {
     int idx = 0;
-    while (str[idx] != '\0') {
+    while (str[idx] != '\0' && str[idx] != '\n') {
         idx++;
     }
     return idx;
@@ -110,4 +111,16 @@ int isEqualString(const char *str1, const char *str2) {
     }
 
     return 1;
+}
+
+char *padNumber(const int value, const int length) {
+    char *result = malloc((length + 1) * sizeof(char));
+
+    for (int i = 0; i < length; i++) {
+        const int digit = value % pow(10, length - i) / pow(10, length - i -1);
+        result[i] = (char)(digit + 48);
+    }
+    result[length] = '\0';
+
+    return result;
 }

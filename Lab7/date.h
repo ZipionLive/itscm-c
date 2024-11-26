@@ -12,5 +12,6 @@ typedef struct date {
 } DATE;
 
 DATE promptDate();
+char *dateToString(DATE date);
 
 #endif //DATE_H
