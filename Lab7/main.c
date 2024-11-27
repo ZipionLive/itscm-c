@@ -4,8 +4,9 @@
 #include "event.h"
 #include "person.h"
 #include "rectangle.h"
+#include "student.h"
 
-#define TAB_SIZE 1
+#define TAB_SIZE 3
 
 int main(void) {
     // PERSON *people = promptPeople(TAB_SIZE);
@@ -22,12 +23,21 @@ int main(void) {
     //         areas[i],
     //         perimeters[i]);
     // }
-    EVENT *events = promptEvents(TAB_SIZE);
-    printEvents(events, TAB_SIZE);
+    // EVENT *events = promptEvents(TAB_SIZE);
+    // printEvents(events, TAB_SIZE);
+    STUDENT *students = promptStudents(TAB_SIZE);
+    printStudents(students, TAB_SIZE);
+    printf("\nBest in maths :\n");
+    printStudent(getFirstInMaths(students, TAB_SIZE));
+    printf("\nBest in programming :\n");
+    printStudent(getFirstInProgramming(students, TAB_SIZE));
+    printf("\nAverage maths result : %.2f%%\n", getMathsAverage(students, TAB_SIZE));
+    printf("\nAverage programming result : %.2f%%\n", getProgrammingAverage(students, TAB_SIZE));
     // free(people);
     // free(rectangles);
     // free(areas);
     // free(perimeters);
-    free(events);
+    // free(events);
+    free(students);
     return 0;
 }
