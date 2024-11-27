@@ -15,4 +15,6 @@ add_executable(Lab7 main.c
         event.c
         event.h
         mathTools.c
-        mathTools.h)
+        mathTools.h
+        student.c
+        student.h)
