@@ -53,3 +53,5 @@ dkms.conf
 
 # CLion project folders
 **/.idea/
+**/.cmake-build-debug
+
