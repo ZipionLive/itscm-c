@@ -26,6 +26,24 @@ void addNode(LIST *list, NODE *node) {
     }
 }
 
+void removeNode(LIST *list, const int id) {
+    NODE *current = list->first;
+    if (current->data->id == id) {
+        list->first = current->next;
+        freeNode(current);
+        printf("\nNode with id %d successfully removed", id);
+    }
+    else {
+        while (current->next != NULL) {
+            current = current->next;
+            if (current->next->data->id == id) {
+                current->next = current->next->next;
+                printf("\nNode with id %d successfully removed", id);
+            }
+        }
+    }
+}
+
 void printList(const LIST *list) {
     NODE *current = list->first;
     while (current != NULL) {
@@ -45,11 +63,7 @@ void freeList(LIST *list) {
 
     while (current != NULL) {
         NODE *next = current->next;
-        free(current->data->name);
-        free(current->data->login);
-        free(current->data->password);
-        free(current->data);
-        free(current);
+        freeNode(current);
         current = next;
     }
 
