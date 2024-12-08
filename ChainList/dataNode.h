@@ -13,5 +13,6 @@ typedef struct node {
 } NODE;
 
 NODE *createNode(DATA *data);
+void freeNode(NODE *node);
 
 #endif //DATANODE_H

@@ -13,6 +13,7 @@ typedef struct list {
 
 LIST *initList();
 void addNode(LIST *list, NODE *node);
+void removeNode(LIST *list, int id);
 void printList(const LIST *list);
 void freeList(LIST *list);
 

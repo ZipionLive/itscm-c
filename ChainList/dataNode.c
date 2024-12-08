@@ -14,3 +14,11 @@ NODE *createNode(DATA *data) {
 
     return node;
 }
+
+void freeNode(NODE *node) {
+    free(node->data->name);
+    free(node->data->login);
+    free(node->data->password);
+    free(node->data);
+    free(node);
+}
